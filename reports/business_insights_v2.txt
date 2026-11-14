@@ -1,0 +1,79 @@
+=================================================================
+SHOPSAGE AI - BUSINESS INSIGHTS REPORT
+Delivery Risk Analysis | Model V2
+=================================================================
+
+1. MODEL OVERVIEW
+----------------------------------------
+Prediction threshold: 0.1
+Evaluation approach: Chronological train/validation/test split
+Model: Selected V2 delivery-risk model
+pr_auc: 0.1604
+roc_auc: 0.7272
+precision: 0.1602
+recall: 0.4556
+f1_score: 0.2370
+brier_score: 0.0589
+
+2. MONTHLY DELIVERY PERFORMANCE
+----------------------------------------
+2018-06: 1964 orders, actual late rate 1.07%, predicted late rate 4.79%
+2018-07: 6156 orders, actual late rate 4.48%, predicted late rate 19.69%
+2018-08: 6351 orders, actual late rate 10.39%, predicted late rate 22.30%
+
+Monthly observations:
+- Largest overprediction: 2018-07 (15.20% percentage-point gap).
+- Smallest prediction gap: 2018-06 (3.72% absolute gap).
+- Delivery risk varies over time. Monitor changing monthly patterns rather than assuming a fixed late-delivery rate.
+
+3. REGIONAL DELIVERY INSIGHTS
+----------------------------------------
+States with highest observed late-delivery rates:
+- SP: 9.53% actual late rate, 6750 orders.
+- RJ: 5.42% actual late rate, 1625 orders.
+- PE: 4.98% actual late rate, 241 orders.
+- BA: 4.80% actual late rate, 458 orders.
+- ES: 4.78% actual late rate, 272 orders.
+
+States with largest prediction overestimation:
+- PE: predicted 79.25%, actual 4.98%.
+- PA: predicted 73.68%, actual 2.63%.
+- BA: predicted 69.65%, actual 4.80%.
+- CE: predicted 51.79%, actual 1.19%.
+- ES: predicted 26.10%, actual 4.78%.
+
+States with largest prediction underestimation:
+- DF: predicted 1.12%, actual 3.93%.
+- PR: predicted 1.62%, actual 3.23%.
+- MG: predicted 0.57%, actual 2.09%.
+- GO: predicted 2.91%, actual 4.00%.
+- RS: predicted 3.75%, actual 3.33%.
+
+Regional observation: customer state is associated with different observed delivery patterns. These relationships are predictive, not proof of causation.
+
+4. BUSINESS RECOMMENDATIONS
+----------------------------------------
+1. Prioritize high-risk orders for manual review before promised delivery dates.
+2. Monitor regional performance using both order volume and observed late-delivery rates.
+3. Investigate states with large gaps between predicted and actual late-delivery rates.
+4. Review monthly trends to identify changes in delivery performance and potential distribution shift.
+5. Track false positives and false negatives separately. False positives create unnecessary interventions, while false negatives represent late orders the model misses.
+6. Validate the model on newer data before deploying automated customer notifications or operational decisions.
+
+5. PROBABILITY CALIBRATION
+----------------------------------------
+Calibration comparison was available. See calibration_metrics_v2.csv for the detailed metrics.
+The original V2 model performed marginally better than the Platt-calibrated version in the reported test results.
+
+6. LIMITATIONS AND RESPONSIBLE USE
+----------------------------------------
+- Results are based on a historical Olist dataset.
+- Regional patterns may change over time.
+- Small state-level samples may produce unstable rates.
+- Model predictions indicate risk, not certainty.
+- SHAP feature importance does not establish causality.
+- This report is analytical support, not a production delivery-management system.
+
+=================================================================
+END OF BUSINESS INSIGHTS REPORT
+=================================================================

@@ -1,0 +1,34 @@
+{
+    "experiment": "Customer state feature ablation",
+    "split": "Chronological 70/15/15",
+    "selection_metric": "Validation PR-AUC",
+    "threshold_selection": "Maximum validation F1",
+    "training_rows": 67529,
+    "validation_rows": 14470,
+    "testing_rows": 14471,
+    "location_feature": "customer_state",
+    "results": [
+        {
+            "experiment": "With Location",
+            "selected_configuration": "Unweighted",
+            "threshold": 0.1,
+            "pr_auc": 0.1604485052385718,
+            "roc_auc": 0.7271601848247778,
+            "precision": 0.16017634092578986,
+            "recall": 0.4555903866248694,
+            "f1_score": 0.2370209296004349,
+            "brier_score": 0.05885365232825279
+        },
+        {
+            "experiment": "Without Location",
+            "selected_configuration": "Weighted",
+            "threshold": 0.5100000000000001,
+            "pr_auc": 0.13240248659915835,
+            "roc_auc": 0.6890475359814947,
+            "precision": 0.15178082191780823,
+            "recall": 0.2894461859979101,
+            "f1_score": 0.199137311286844,
+            "brier_score": 0.1393216997385025
+        }
+    ]
+}

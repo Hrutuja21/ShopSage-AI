@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environments and secrets
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Data and generated artifacts
+data/raw/*
+data/interim/*
+data/processed/*
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+models/*
+!models/.gitkeep
+reports/figures/*
+!reports/figures/.gitkeep
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Keep the model required by the application
+!models/best_delivery_model_v2.joblib
+
+# Exclude generated prediction and row-level evaluation data
+reports/prediction_logs.csv
+reports/test_predictions_v2.csv
+reports/error_examples_v2.csv
+
+# Exclude older model metadata
+reports/training_metadata.json

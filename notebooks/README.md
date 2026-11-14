@@ -1,0 +1,1 @@
+Create and save the Colab/Jupyter notebooks for data exploration, feature engineering, model training, and model evaluation in this folder. Keep reusable production code in `src/shopsage/` rather than only in notebooks.
